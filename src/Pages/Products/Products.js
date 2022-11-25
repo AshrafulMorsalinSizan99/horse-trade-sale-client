@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import BookingModal from '../BookingModal/BookingModal';
 import ProductCard from './ProductCard';
 
 const Products = () => {
@@ -11,6 +12,7 @@ const Products = () => {
     //         .then(res => res.json())
     //         .then(data => setProducts(data))
     // }, [])
+    const [product1, setProduct1] = useState(null);
     return (
         <div>
             <div>
@@ -21,11 +23,19 @@ const Products = () => {
                     products.map(product => <ProductCard
                         key={product.id}
                         product={product}
+                        setProduct1={setProduct1}
                     >
 
                     </ProductCard>)
                 }
             </div>
+            {
+                product1 &&
+                <BookingModal
+                    product1={product1}
+                    setProduct1={setProduct1}
+                ></BookingModal>
+            }
         </div>
     );
 };
