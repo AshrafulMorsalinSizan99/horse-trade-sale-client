@@ -1,0 +1,20 @@
+[
+    {
+        "_id": "635a0c0b64a6d231228942ae",
+        "service_id": "01",
+        "title": "Samsung",
+        "img": "https://sellatease.com/public-blog/wp-content/uploads/2020/07/samsung.jpg"
+    },
+    {
+        "_id": "635a0c0b64a6d231228942af",
+        "service_id": "02",
+        "title": "Xiaomi",
+        "img": "https://xiaomiui.net/wp-content/uploads/2022/03/Used-Xiaomi-Phone.jpg"
+    },
+    {
+        "_id": "635b591a1dafe382a9da8c96",
+        "service_id": "03",
+        "title": "One Plus",
+        "img": "https://www.androidauthority.com/wp-content/uploads/2021/03/OnePlus-9-Pro-vs-OnePlus-9-bright-cameras.jpg"
+    }
+]
