@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import Products from '../../Products/Products';
 import CategoryCard from './CategoryCard';
 
 const Categories = () => {
     const [categories, setCategories] = useState([]);
     useEffect(() => {
-        fetch('categories.json')
+        fetch('http://localhost:5000/categories')
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
@@ -19,7 +20,8 @@ const Categories = () => {
                     categories.map(category => <CategoryCard
                         key={category._id}
                         category={category}
-                    ></CategoryCard>)
+                    ></CategoryCard>
+                    )
                 }
             </div>
         </div>
