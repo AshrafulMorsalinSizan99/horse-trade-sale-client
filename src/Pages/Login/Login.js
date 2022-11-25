@@ -1,13 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const { signIn, providerLogin } = useContext(AuthContext);
     const provider = new GoogleAuthProvider();
     const [loginError, setLoginError] = useState('');
+    const navigate = useNavigate();
     const handleLogin = data => {
         console.log(data);
         setLoginError('');
@@ -15,6 +16,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                navigate('/')
             })
             .catch(err => {
                 console.log(err.message);
@@ -64,18 +66,7 @@ const Login = () => {
                         </label>
                         {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
                     </div>
-                    <div className="form-control">
-                        <label className="label cursor-pointer">
-                            <span className="label-text">Buyer</span>
-                            <input type="radio" name="radio-10" className="radio checked:bg-blue-500" checked />
-                        </label>
-                    </div>
-                    <div className="form-control">
-                        <label className="label cursor-pointer">
-                            <span className="label-text">Seller</span>
-                            <input type="radio" name="radio-10" className="radio checked:bg-red-500" checked />
-                        </label>
-                    </div>
+
                     <input className='btn btn-accent w-full' value="login" type="submit" />
                     <div>
                         {loginError && <p className='text-red-600'>{loginError}</p>}
