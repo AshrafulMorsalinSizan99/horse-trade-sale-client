@@ -64,10 +64,24 @@ const Login = () => {
                         </label>
                         {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
                     </div>
+                    <div className="form-control">
+                        <label className="label cursor-pointer">
+                            <span className="label-text">Buyer</span>
+                            <input type="radio" name="radio-10" className="radio checked:bg-blue-500" checked />
+                        </label>
+                    </div>
+                    <div className="form-control">
+                        <label className="label cursor-pointer">
+                            <span className="label-text">Seller</span>
+                            <input type="radio" name="radio-10" className="radio checked:bg-red-500" checked />
+                        </label>
+                    </div>
                     <input className='btn btn-accent w-full' value="login" type="submit" />
                     <div>
                         {loginError && <p className='text-red-600'>{loginError}</p>}
                     </div>
+
+
                 </form>
                 <p>New to Horse Trade Sale? <Link className='text-secondary' to='/signup'> Create an account</Link></p>
                 <div className="divider">OR</div>
