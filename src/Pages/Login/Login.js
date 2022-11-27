@@ -9,13 +9,13 @@ const Login = () => {
     const { signIn, providerLogin } = useContext(AuthContext);
     const provider = new GoogleAuthProvider();
     const [loginError, setLoginError] = useState('');
-    const [loginUserEmail, setLoginUserEmail] = useState('');
-    const [token] = useToken(loginUserEmail);
+    // const [loginUserEmail, setLoginUserEmail] = useState('');
+    // const [token] = useToken(loginUserEmail);
     const navigate = useNavigate();
 
-    if (token) {
-        navigate('/');
-    }
+    // if (token) {
+    //     navigate('/');
+    // }
     const handleLogin = data => {
         console.log(data);
         setLoginError('');
@@ -23,7 +23,8 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                setLoginUserEmail(data.email);
+                // setLoginUserEmail(data.email);
+                navigate('/');
 
             })
             .catch(err => {

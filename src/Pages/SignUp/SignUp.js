@@ -13,9 +13,9 @@ const SignUp = () => {
     const [token] = useToken(createdUserEmail);
     const navigate = useNavigate();
 
-    if (token) {
-        navigate('/');
-    }
+    // if (token) {
+    //     navigate('/');
+    // }
     const handleSignUp = data => {
         console.log(data);
         setSignUpError('');
@@ -50,11 +50,13 @@ const SignUp = () => {
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
-                setCreatedUserEmail(email);
+                navigate('/');
+                // setCreatedUserEmail(email);
 
             })
 
     }
+
 
     return (
         <div className='h-[800px]  flex justify-center items-center'>
