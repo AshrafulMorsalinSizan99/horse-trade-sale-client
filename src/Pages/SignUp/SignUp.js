@@ -10,7 +10,7 @@ const SignUp = () => {
     const { createUser, updateUser } = useContext(AuthContext);
     const [signUpError, setSignUpError] = useState('');
     const [createdUserEmail, setCreatedUserEmail] = useState('');
-    const [token] = useToken(createdUserEmail);
+    // const [token] = useToken(createdUserEmail);
     const navigate = useNavigate();
 
     // if (token) {
