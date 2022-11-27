@@ -28,7 +28,12 @@ const SignUp = () => {
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        saveBuyer(data.name, data.email);
+                        if (data.seller !== null) {
+                            saveSeller(data.name, data.email)
+                        }
+                        else {
+                            saveBuyer(data.name, data.email);
+                        }
                     })
                     .catch(err => console.error(err))
             })
@@ -57,6 +62,21 @@ const SignUp = () => {
 
     }
 
+    const saveSeller = (name, email) => {
+        const seller = { name, email };
+        fetch('http://localhost:5000/sellers', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(seller)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                navigate('/');
+            })
+    }
 
     return (
         <div className='h-[800px]  flex justify-center items-center'>
@@ -92,17 +112,37 @@ const SignUp = () => {
                         {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
                     </div>
                     <div className="form-control">
-                        <label className="label cursor-pointer">
+                        {/* <label className="label cursor-pointer">
                             <span className="label-text">Buyer</span>
                             <input type="radio" name="radio-10" className="radio checked:bg-blue-500" />
+                        </label> */}
+                        <label htmlFor="field-buyer">
+                            <input
+                                {...register("buyer")}
+                                type="radio"
+                                name="buyer"
+                                value="buyer"
+                                id="field-buyer"
+                            />
+                            Buyer
+                        </label>
+                        <label htmlFor="field-seller">
+                            <input
+                                {...register("seller")}
+                                type="radio"
+                                name="seller"
+                                value="seller"
+                                id="field-seller"
+                            />
+                            Seller
                         </label>
                     </div>
-                    <div className="form-control">
+                    {/* <div className="form-control">
                         <label className="label cursor-pointer">
                             <span className="label-text">Seller</span>
                             <input type="radio" name="radio-10" className="radio checked:bg-red-500" />
                         </label>
-                    </div>
+                    </div> */}
                     <input className='btn btn-accent w-full' value="signup" type="submit" />
                     {signUpError && <p className='text-red-600'>{signUpError}</p>}
                 </form>

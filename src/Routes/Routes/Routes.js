@@ -3,8 +3,10 @@ import DashBoardLayOut from "../../Layout/DashBoardLayOut";
 import Main from "../../Layout/Main";
 import Blogs from "../../Pages/Blogs/Blogs";
 import AllBuyers from "../../Pages/DashBoard/AllBuyers/AllBuyers";
+import AllSellers from "../../Pages/DashBoard/AllSellers/AllSellers";
 import DashBoard from "../../Pages/DashBoard/DashBoard/DashBoard";
 import MyOrder from "../../Pages/DashBoard/MyOrder/MyOrder";
+import Payment from "../../Pages/DashBoard/Payment/Payment";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/Homepage/Home/Home";
 import Login from "../../Pages/Login/Login";
@@ -54,6 +56,15 @@ const router = createBrowserRouter([
                 path: '/dashboard/allbuyers',
                 element: <AdminRoute><AllBuyers></AllBuyers></AdminRoute>
             },
+            {
+                path: '/dashboard/allsellers',
+                element: <AdminRoute><AllSellers></AllSellers></AdminRoute>
+            },
+            // {
+            //     path: '/dashboard/payment/:id',
+            //     element: <Payment></Payment>,
+            //     loader: ({ params }) => fetch(`http://localhost:5000/bookings/${params.id}`)
+            // },
         ]
     }
 ])
