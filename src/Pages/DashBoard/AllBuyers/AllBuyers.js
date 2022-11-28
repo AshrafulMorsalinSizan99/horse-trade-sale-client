@@ -12,20 +12,20 @@ const AllBuyers = () => {
     const { data: buyers = [], refetch } = useQuery({
         queryKey: ['buyers'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/buyers');
+            const res = await fetch('https://horse-trade-sale-server.vercel.app/buyers');
             const data = await res.json();
             return data;
         }
     })
 
-    // axios.get('http://localhost:5000/buyers')
+    // axios.get('https://horse-trade-sale-server.vercel.app/buyers')
     //     .then(data => {
     //         console.log(data);
     //         const buyers = data.data;
     //     })
 
     // const handleDeleteBuyer = buyer => {
-    //     fetch(`http://localhost:5000/buyers/${buyer._id}`, {
+    //     fetch(`https://horse-trade-sale-server.vercel.app/buyers/${buyer._id}`, {
     //         method: 'DELETE',
 
     //     })

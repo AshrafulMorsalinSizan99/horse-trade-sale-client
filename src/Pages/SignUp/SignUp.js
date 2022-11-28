@@ -47,7 +47,7 @@ const SignUp = () => {
     }
     const saveBuyer = (name, email) => {
         const user = { name, email };
-        fetch('http://localhost:5000/buyers', {
+        fetch('https://horse-trade-sale-server.vercel.app/buyers', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -66,7 +66,7 @@ const SignUp = () => {
 
     const saveSeller = (name, email) => {
         const seller = { name, email };
-        fetch('http://localhost:5000/sellers', {
+        fetch('https://horse-trade-sale-server.vercel.app/sellers', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -80,7 +80,7 @@ const SignUp = () => {
             })
     }
     // const handleMakeSeller = id => {
-    //     fetch(`http://localhost:5000/sellers/${createUser.id}`, {
+    //     fetch(`https://horse-trade-sale-server.vercel.app/sellers/${createUser.id}`, {
     //         method: 'PUT'
     //     })
     //         .then(res => res.json())

@@ -1,6 +1,6 @@
 # Project Name: Horse Trade Sale
 
-# Live Site Link: https://photo-fiesta.web.app/
+# Live Site Link: https://horse-trade-sale.web.app/
 
 * Created Home Route
   * Added a navbar, slider,one extra options,3 categories and footer

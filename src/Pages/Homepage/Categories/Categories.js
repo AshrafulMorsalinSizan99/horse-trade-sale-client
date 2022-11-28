@@ -6,12 +6,12 @@ import axios from 'axios';
 const Categories = () => {
     const [categories, setCategories] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/categories')
+        fetch('https://horse-trade-sale-server.vercel.app/categories')
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
     // useEffect(() => {
-    //     axios.get('http://localhost:5000/categories')
+    //     axios.get('https://horse-trade-sale-server.vercel.app/categories')
     //         .then(data => setCategories(data))
     // }, [])
     return (

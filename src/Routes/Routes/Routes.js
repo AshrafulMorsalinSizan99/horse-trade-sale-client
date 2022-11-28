@@ -41,7 +41,7 @@ const router = createBrowserRouter([
             {
                 path: '/categories/:id',
                 element: <PrivateRoute><Products></Products></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
+                loader: ({ params }) => fetch(`https://horse-trade-sale-server.vercel.app/categories/${params.id}`)
             }
         ]
     },
@@ -68,7 +68,7 @@ const router = createBrowserRouter([
             // {
             //     path: '/dashboard/payment/:id',
             //     element: <Payment></Payment>,
-            //     loader: ({ params }) => fetch(`http://localhost:5000/bookings/${params.id}`)
+            //     loader: ({ params }) => fetch(`https://horse-trade-sale-server.vercel.app/bookings/${params.id}`)
             // },
         ]
     }

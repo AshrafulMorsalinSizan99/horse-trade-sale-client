@@ -16,7 +16,7 @@ const ProductCard = ({ product, setProduct1 }) => {
 
                 <div className="card-actions justify-between">
                     <label className="btn btn-primary"
-                        onClick={() => setProduct1(product)}
+                    // onClick={() => setProduct1(product)}
                     >Report to Admin</label>
                     <label htmlFor="booking-modal" className="btn btn-primary"
                         onClick={() => setProduct1(product)}

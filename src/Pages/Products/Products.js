@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import BookingModal from '../BookingModal/BookingModal';
+import AllReports from '../DashBoard/AllReports/AllReports';
 import ProductCard from './ProductCard';
 
 const Products = () => {
@@ -8,7 +9,7 @@ const Products = () => {
     // const { _id } = category;
     // const [products, setProducts] = useState([]);
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/categories/${}`)
+    //     fetch(`https://horse-trade-sale-server.vercel.app/categories/${}`)
     //         .then(res => res.json())
     //         .then(data => setProducts(data))
     // }, [])
@@ -36,6 +37,14 @@ const Products = () => {
                     setProduct1={setProduct1}
                 ></BookingModal>
             }
+            {/* {
+                product1 &&
+                <AllReports
+                    product1={product1}
+                    setProduct1={setProduct1}
+                >
+                </AllReports>
+            } */}
         </div>
     );
 };

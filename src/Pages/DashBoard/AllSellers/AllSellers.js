@@ -11,13 +11,13 @@ const AllSellers = () => {
     const { data: sellers = [], refetch } = useQuery({
         queryKey: ['sellers'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/sellers');
+            const res = await fetch('https://horse-trade-sale-server.vercel.app/sellers');
             const data = await res.json();
             return data;
         }
     })
     // const handleDeleteBuyer = buyer => {
-    //     fetch(`http://localhost:5000/buyers/${buyer._id}`, {
+    //     fetch(`https://horse-trade-sale-server.vercel.app/buyers/${buyer._id}`, {
     //         method: 'DELETE',
 
     //     })
@@ -41,6 +41,7 @@ const AllSellers = () => {
 
                             <th>Email</th>
 
+                            <th>Verify</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
@@ -51,6 +52,7 @@ const AllSellers = () => {
                                 <th>{i + 1}</th>
 
                                 <td>{seller.email}</td>
+                                <td><button className='btn btn-accent btn-xs'>Verify</button></td>
 
                                 <td>
                                     <label onClick={() => setDeletingBuyer(seller)} htmlFor="confirmation-modal" className="btn btn-xs">Delete</label>
@@ -58,6 +60,7 @@ const AllSellers = () => {
 
 
                                 </td>
+
                             </tr>)
                         }
 
