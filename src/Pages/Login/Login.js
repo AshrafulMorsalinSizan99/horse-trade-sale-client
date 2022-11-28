@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import useToken from '../../hooks/useToken';
 const Login = () => {
@@ -12,7 +12,9 @@ const Login = () => {
     // const [loginUserEmail, setLoginUserEmail] = useState('');
     // const [token] = useToken(loginUserEmail);
     const navigate = useNavigate();
+    const location = useLocation();
 
+    const from = location.state?.from?.pathname || '/';
     // if (token) {
     //     navigate('/');
     // }
@@ -31,6 +33,30 @@ const Login = () => {
                 console.log(err.message);
                 setLoginError(err.message);
             });
+        // .then(res => {
+        //     const user = res.user;
+
+
+        //     const currentUser = {
+        //         email: user?.email
+        //     }
+        //     console.log(currentUser);
+        //     fetch('http://localhost:5000/jwt', {
+        //         method: 'POST',
+        //         headers: {
+        //             'content-type': 'application/json'
+        //         },
+        //         body: JSON.stringify(currentUser)
+        //     })
+        //         .then(res => res.json())
+        //         .then(data => {
+        //             console.log(data);
+        //             localStorage.setItem('photo-token', data.token);
+        //         })
+        //     // form.reset();
+        //     navigate(from, { replace: true })
+        // })
+        // .catch(err => console.error(err))
     }
     const handleGoogleSignIn = () => {
         providerLogin(provider)
