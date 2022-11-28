@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
 
 const AllBuyers = () => {
@@ -16,6 +17,13 @@ const AllBuyers = () => {
             return data;
         }
     })
+
+    // axios.get('http://localhost:5000/buyers')
+    //     .then(data => {
+    //         console.log(data);
+    //         const buyers = data.data;
+    //     })
+
     // const handleDeleteBuyer = buyer => {
     //     fetch(`http://localhost:5000/buyers/${buyer._id}`, {
     //         method: 'DELETE',

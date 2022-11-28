@@ -13,8 +13,11 @@ const ProductCard = ({ product, setProduct1 }) => {
                 <p>Original Price: {originalPrice}</p>
                 <p>Used Time: {used}</p>
                 <p>Published Time: {time}</p>
-                <div className="card-actions justify-end">
 
+                <div className="card-actions justify-between">
+                    <label className="btn btn-primary"
+                        onClick={() => setProduct1(product)}
+                    >Report to Admin</label>
                     <label htmlFor="booking-modal" className="btn btn-primary"
                         onClick={() => setProduct1(product)}
                     >Book Now</label>

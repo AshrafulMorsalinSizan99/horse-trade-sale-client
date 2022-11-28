@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Products from '../../Products/Products';
 import CategoryCard from './CategoryCard';
+import axios from 'axios';
 
 const Categories = () => {
     const [categories, setCategories] = useState([]);
@@ -9,6 +10,10 @@ const Categories = () => {
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
+    // useEffect(() => {
+    //     axios.get('http://localhost:5000/categories')
+    //         .then(data => setCategories(data))
+    // }, [])
     return (
         <div>
             <div className='mb-4 my-4'>

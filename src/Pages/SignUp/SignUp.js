@@ -42,6 +42,8 @@ const SignUp = () => {
                 setSignUpError(err.message);
             })
 
+
+
     }
     const saveBuyer = (name, email) => {
         const user = { name, email };
@@ -77,6 +79,15 @@ const SignUp = () => {
                 navigate('/');
             })
     }
+    // const handleMakeSeller = id => {
+    //     fetch(`http://localhost:5000/sellers/${createUser.id}`, {
+    //         method: 'PUT'
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data)
+    //         })
+    // }
 
     return (
         <div className='h-[800px]  flex justify-center items-center'>
@@ -123,6 +134,7 @@ const SignUp = () => {
                                 name="buyer"
                                 value="buyer"
                                 id="field-buyer"
+
                             />
                             Buyer
                         </label>
@@ -133,6 +145,7 @@ const SignUp = () => {
                                 name="seller"
                                 value="seller"
                                 id="field-seller"
+                            // onClick={() => handleMakeSeller(createUser._id)}
                             />
                             Seller
                         </label>

@@ -3,6 +3,7 @@ import DashBoardLayOut from "../../Layout/DashBoardLayOut";
 import Main from "../../Layout/Main";
 import Blogs from "../../Pages/Blogs/Blogs";
 import AllBuyers from "../../Pages/DashBoard/AllBuyers/AllBuyers";
+import AllReports from "../../Pages/DashBoard/AllReports/AllReports";
 import AllSellers from "../../Pages/DashBoard/AllSellers/AllSellers";
 import DashBoard from "../../Pages/DashBoard/DashBoard/DashBoard";
 import MyOrder from "../../Pages/DashBoard/MyOrder/MyOrder";
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/allsellers',
                 element: <AdminRoute><AllSellers></AllSellers></AdminRoute>
+            },
+            {
+                path: '/dashboard/allreports',
+                element: <AdminRoute><AllReports></AllReports></AdminRoute>
             },
             // {
             //     path: '/dashboard/payment/:id',
