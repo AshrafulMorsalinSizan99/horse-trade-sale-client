@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import './Navbar.css';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -23,7 +24,7 @@ const Navbar = () => {
             <li><Link to='/login'>Login</Link></li>}
     </React.Fragment>
     return (
-        <div className="navbar bg-base-100 flex justify-between">
+        <div className="navbar header1 bg-base-100 flex justify-between">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
